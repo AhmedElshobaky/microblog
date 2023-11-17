@@ -9,6 +9,10 @@ from urllib.parse import urlsplit
 
 from app.forms import RegistrationForm
 
+#chapter 6: Profile and avatars
+from datetime import datetime
+from app.forms import EditProfileForm
+
 #add login functionality (Chapters 3 and 5)
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -72,3 +76,47 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+@app.route('/user/<username>')
+@login_required
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = [
+        {'author': user, 'body': 'Test post 1'},
+        {'author': user, 'body': 'Test post 2'}
+    ]
+    return render_template('user.html', user=user, posts=posts)
+
+
+# chapter 6
+# add last seen functionality:
+#
+# before every api call a user call it will perform 
+# this request to update the user last seen
+#
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        '''
+        Flask-Login will invoke the user loader callback 
+        function, which will run a database query that will
+        put the target user in the database session. So you
+        can add the user again in this function, but it is 
+        not necessary because it is already there.
+        '''
+        db.session.commit()
+
+@app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+    form = EditProfileForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.about_me = form.about_me.data
+        db.session.commit()
+        flash('Changes have been saved!')
+        return redirect(url_for('edit_profile'))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.about_me.data = current_user.about_me
+    return render_template('edit_profile.html', title='Edit Profile', form=form)
