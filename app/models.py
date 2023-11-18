@@ -1,11 +1,9 @@
 from datetime import datetime
 from app import db, login
 
-# chapter 4: UserSignIn System
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-#chapter 5: Profile and avatars
 from hashlib import md5
 
 # adding auxiliary follower-followed table 'association table' to represent 

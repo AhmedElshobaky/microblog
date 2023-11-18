@@ -1,16 +1,12 @@
 from flask import Flask
 
-# chapter 2: config
 from config import Config
 
-# chapter 3: database
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-#chapter 4: login system
 from flask_login import LoginManager
 
-#chapter 7: Error handling and logging
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os

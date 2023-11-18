@@ -1,22 +1,15 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms import LoginForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, PostForm
 
-#chapter 5: User Login System
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Post
 from urllib.parse import urlsplit
 
-from app.forms import RegistrationForm
-
-#chapter 6: Profile and avatars
 from datetime import datetime
-from app.forms import EditProfileForm
 
-#chapter 7: followers and testing
-from app.forms import EmptyForm
 
-#add login functionality (Chapters 3 and 5)
+#add login functionality
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     # check if user already LoggedIn
@@ -41,17 +34,16 @@ def login():
     
     return render_template('login.html', title='Login', form=form)
 
-#add logout functionality (Chapter 5)
+#add logout functionality
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-
     form = PostForm()
     if form.validate_on_submit():
         post = Post(body=form.post.data, author=current_user)
@@ -68,7 +60,7 @@ def index():
     return render_template('index.html', title='Home', form=form,
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
-
+    
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -89,18 +81,16 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-
     page = request.args.get('page', 1, type=int)
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(
         page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
     next_url = url_for('user', username=user.username, page=posts.next_num) if posts.has_next else None
     prev_url = url_for('user', username=user.username, page=posts.prev_num) if posts.has_prev else None
-
     form = EmptyForm()
-    return render_template('user.html', user=user, posts=posts, form=form)
+    return render_template('user.html', user=user, posts=posts.items,
+                           next_url=next_url, prev_url=prev_url, form=form)
 
 
-# chapter 6
 # add last seen functionality:
 #
 # before every api call a user call it will perform 
@@ -184,4 +174,3 @@ def explore():
     prev_url = url_for('explore', page=posts.prev_num) if posts.has_prev else None
     return render_template("index.html", title='Explore', posts=posts.items,
                           next_url=next_url, prev_url=prev_url)
-
