@@ -16,3 +16,5 @@ class Config(object):
     ADMINS = ['admin@example.com']
 
     POSTS_PER_PAGE = 5 #post
+
+    LANGUAGES = ['en', 'es', 'fr', 'de']
