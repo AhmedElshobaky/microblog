@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-20 19:02+0200\n"
+"POT-Creation-Date: 2023-11-20 20:45+0200\n"
 "PO-Revision-Date: 2023-11-20 18:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -21,7 +21,6 @@ msgstr ""
 #: app/__init__.py:35
 msgid "Please login to access this page!"
 msgstr "¡Inicie sesión para acceder a esta página!"
-
 
 #: app/email.py:22
 msgid "[Microblog] Reset Your Password"
@@ -39,8 +38,7 @@ msgstr "Restablecer contraseña"
 msgid "Remember Me"
 msgstr "Recuérdame"
 
-
-#: app/forms.py:14 app/routes.py:74 app/templates/login.html:5
+#: app/forms.py:14 app/routes.py:80 app/templates/login.html:5
 msgid "Sign In"
 msgstr "Iniciar sesión"
 
@@ -52,7 +50,7 @@ msgstr "correo electrónico"
 msgid "Repeat Password"
 msgstr "Restablecer contraseña"
 
-#: app/forms.py:21 app/routes.py:95 app/templates/register.html:5
+#: app/forms.py:21 app/routes.py:101 app/templates/register.html:5
 msgid "Register"
 msgstr "Registrarse"
 
@@ -76,74 +74,80 @@ msgstr "Enviar"
 msgid "Say something"
 msgstr "di algo"
 
-
 #: app/forms.py:69 app/forms.py:74
 msgid "Request Password Reset"
 msgstr "Restablecer contraseña"
 
-#: app/routes.py:30
+#: app/routes.py:36
 msgid "Your post is now live!"
 msgstr "¡Tu publicación ya está disponible!"
 
-#: app/routes.py:39 app/templates/base.html:31
+#: app/routes.py:45 app/templates/base.html:31
 msgid "Home"
 msgstr "Casa"
 
-#: app/routes.py:54 app/templates/base.html:32
+#: app/routes.py:60 app/templates/base.html:32
 msgid "Explore"
 msgstr "Explorar"
 
-#: app/routes.py:67
+#: app/routes.py:73
 msgid "Invalid username or password"
 msgstr "Nombre de usuario o contraseña no válidos"
 
-#: app/routes.py:93
+#: app/routes.py:99
 msgid "Congratulations, you are now a registered user!"
 msgstr "¡Felicitaciones, ya eres un usuario registrado!"
 
-#: app/routes.py:108
+#: app/routes.py:114
 msgid "Check your email for the instructions to reset your password"
-msgstr "Revisa tu correo electrónico para obtener instrucciones para restablecer tu contraseña"
+msgstr "Revise su correo electrónico para obtener instrucciones para restablecer su contraseña"
 
-
-#: app/routes.py:111 app/templates/reset_password_request.html:5
+#: app/routes.py:117 app/templates/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "Restablecer contraseña"
 
-#: app/routes.py:125
+#: app/routes.py:131
 msgid "Your password has been reset."
 msgstr "Tu contraseña ha sido restablecida."
 
-#: app/routes.py:154
+#: app/routes.py:160
 msgid "Your changes have been saved."
 msgstr "Tus cambios han sido guardados."
 
-#: app/routes.py:159 app/templates/edit_profile.html:5
+#: app/routes.py:165 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "Editar perfil"
 
-#: app/routes.py:170 app/routes.py:190
+#: app/routes.py:176 app/routes.py:196
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Usuario %(username) no encontrado."
 
-#: app/routes.py:173
+#: app/routes.py:179
 msgid "You cannot follow yourself!"
 msgstr "¡No puedes seguirte a ti mismo!"
 
-#: app/routes.py:177
+#: app/routes.py:183
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "¡Estás siguiendo a %(username)s!"
 
-#: app/routes.py:193
+#: app/routes.py:199
 msgid "You cannot unfollow yourself!"
 msgstr "¡No puedes dejar de seguirte!"
 
-#: app/routes.py:197
+#: app/routes.py:203
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "No estás siguiendo a %(username)s."
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr "Error: el servicio de traducción no está configurado."
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr "Error: el servicio de traducción falló."
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
@@ -162,6 +166,10 @@ msgstr "Volver"
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s dijo %(when)s"
 
+#: app/templates/_post.html:25
+msgid "Translate"
+msgstr "Traducir"
+
 #: app/templates/base.html:14
 msgid "Welcome to Microblog"
 msgstr "Bienvenido al microblog"
@@ -177,6 +185,10 @@ msgstr "Perfil"
 #: app/templates/base.html:39
 msgid "Logout"
 msgstr "Cerrar sesión"
+
+#: app/templates/base.html:76
+msgid "Error: Could not contact server."
+msgstr "Error: No se pudo contactar con el servidor."
 
 #: app/templates/index.html:5
 #, python-format

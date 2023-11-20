@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-20 19:02+0200\n"
+"POT-Creation-Date: 2023-11-20 20:45+0200\n"
 "PO-Revision-Date: 2023-11-20 18:06+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ar\n"
@@ -39,7 +39,7 @@ msgstr "كلمة المرور"
 msgid "Remember Me"
 msgstr "تذكرني"
 
-#: app/forms.py:14 app/routes.py:74 app/templates/login.html:5
+#: app/forms.py:14 app/routes.py:80 app/templates/login.html:5
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
@@ -51,7 +51,7 @@ msgstr "البريد الإلكتروني"
 msgid "Repeat Password"
 msgstr "إعادة تعيين كلمة المرور"
 
-#: app/forms.py:21 app/routes.py:95 app/templates/register.html:5
+#: app/forms.py:21 app/routes.py:101 app/templates/register.html:5
 msgid "Register"
 msgstr "التسجيل"
 
@@ -79,68 +79,76 @@ msgstr "قل شيئا"
 msgid "Request Password Reset"
 msgstr "إعادة تعيين كلمة المرور"
 
-#: app/routes.py:30
+#: app/routes.py:36
 msgid "Your post is now live!"
 msgstr "تم نشر مشاركتك الآن!"
 
-#: app/routes.py:39 app/templates/base.html:31
+#: app/routes.py:45 app/templates/base.html:31
 msgid "Home"
 msgstr "الرئيسية"
 
-#: app/routes.py:54 app/templates/base.html:32
+#: app/routes.py:60 app/templates/base.html:32
 msgid "Explore"
 msgstr "استكشف"
 
-#: app/routes.py:67
+#: app/routes.py:73
 msgid "Invalid username or password"
 msgstr "اسم المستخدم أو كلمة المرور غير صالحة"
 
-#: app/routes.py:93
+#: app/routes.py:99
 msgid "Congratulations, you are now a registered user!"
 msgstr "تهانينا، أنت الآن مستخدم مسجل!"
 
-#: app/routes.py:108
+#: app/routes.py:114
 msgid "Check your email for the instructions to reset your password"
 msgstr "تحقق من بريدك الإلكتروني للحصول على تعليمات إعادة تعيين كلمة المرور الخاصة بك"
 
-#: app/routes.py:111 app/templates/reset_password_request.html:5
+#: app/routes.py:117 app/templates/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "إعادة تعيين كلمة المرور"
 
-#: app/routes.py:125
+#: app/routes.py:131
 msgid "Your password has been reset."
 msgstr "تم إعادة تعيين كلمة المرور الخاصة بك."
 
-#: app/routes.py:154
+#: app/routes.py:160
 msgid "Your changes have been saved."
 msgstr "تم حفظ التغييرات التي قمت بها."
 
-#: app/routes.py:159 app/templates/edit_profile.html:5
+#: app/routes.py:165 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "تحرير الملف الشخصي"
 
-#: app/routes.py:170 app/routes.py:190
+#: app/routes.py:176 app/routes.py:196
 #, python-format
 msgid "User %(username)s not found."
 msgstr "لم يتم العثور على المستخدم %(username)."
 
-#: app/routes.py:173
+#: app/routes.py:179
 msgid "You cannot follow yourself!"
 msgstr "لا يمكنك متابعة نفسك!"
 
-#: app/routes.py:177
+#: app/routes.py:183
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "أنت تتابع %(username)s!"
 
-#: app/routes.py:193
+#: app/routes.py:199
 msgid "You cannot unfollow yourself!"
 msgstr "لا يمكنك إلغاء متابعة نفسك!"
 
-#: app/routes.py:197
+#: app/routes.py:203
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "أنت لا تتابع %(username)s."
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr "خطأ: لم يتم تكوين خدمة الترجمة."
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr "خطأ: فشلت خدمة الترجمة."
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
@@ -159,6 +167,10 @@ msgstr "العودة"
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s قال %(when)s"
 
+#: app/templates/_post.html:25
+msgid "Translate"
+msgstr "ترجمة"
+
 #: app/templates/base.html:14
 msgid "Welcome to Microblog"
 msgstr "مرحبا بكم في Microblog"
@@ -174,6 +186,10 @@ msgstr "الملف الشخصي"
 #: app/templates/base.html:39
 msgid "Logout"
 msgstr "تسجيل الخروج"
+
+#: app/templates/base.html:76
+msgid "Error: Could not contact server."
+msgstr "خطأ: لا يمكن الاتصال بالخادم."
 
 #: app/templates/index.html:5
 #, python-format
