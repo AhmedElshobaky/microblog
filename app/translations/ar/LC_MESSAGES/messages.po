@@ -1,0 +1,240 @@
+# Arabic translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-11-20 19:02+0200\n"
+"PO-Revision-Date: 2023-11-20 18:06+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ar\n"
+"Language-Team: ar <LL@li.org>\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : "
+"n%100>=3 && n%100<=10 ? 3 : n%100>=0 && n%100<=2 ? 4 : 5);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: app/__init__.py:35
+msgid "Please login to access this page!"
+msgstr "الرجاء تسجيل الدخول للوصول إلى هذه الصفحة!"
+
+#: app/email.py:22
+msgid "[Microblog] Reset Your Password"
+msgstr "[Microblog] إعادة تعيين كلمة المرور الخاصة بك"
+
+#: app/forms.py:11 app/forms.py:17 app/forms.py:40
+msgid "Username"
+msgstr "المستخدم"
+
+#: app/forms.py:12 app/forms.py:19 app/forms.py:72
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: app/forms.py:13
+msgid "Remember Me"
+msgstr "تذكرني"
+
+#: app/forms.py:14 app/routes.py:74 app/templates/login.html:5
+msgid "Sign In"
+msgstr "تسجيل الدخول"
+
+#: app/forms.py:18 app/forms.py:68
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: app/forms.py:20 app/forms.py:73
+msgid "Repeat Password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: app/forms.py:21 app/routes.py:95 app/templates/register.html:5
+msgid "Register"
+msgstr "التسجيل"
+
+#: app/forms.py:31 app/forms.py:58
+msgid "Please use a different username."
+msgstr "الرجاء استخدام اسم مستخدم مختلف."
+
+#: app/forms.py:36
+msgid "Please use a different email address."
+msgstr "يرجى استخدام عنوان بريد إلكتروني مختلف."
+
+#: app/forms.py:41
+msgid "About me"
+msgstr "عَنِّي"
+
+#: app/forms.py:42 app/forms.py:61 app/forms.py:65
+msgid "Submit"
+msgstr "إرسال"
+
+#: app/forms.py:64
+msgid "Say something"
+msgstr "قل شيئا"
+
+#: app/forms.py:69 app/forms.py:74
+msgid "Request Password Reset"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: app/routes.py:30
+msgid "Your post is now live!"
+msgstr "تم نشر مشاركتك الآن!"
+
+#: app/routes.py:39 app/templates/base.html:31
+msgid "Home"
+msgstr "الرئيسية"
+
+#: app/routes.py:54 app/templates/base.html:32
+msgid "Explore"
+msgstr "استكشف"
+
+#: app/routes.py:67
+msgid "Invalid username or password"
+msgstr "اسم المستخدم أو كلمة المرور غير صالحة"
+
+#: app/routes.py:93
+msgid "Congratulations, you are now a registered user!"
+msgstr "تهانينا، أنت الآن مستخدم مسجل!"
+
+#: app/routes.py:108
+msgid "Check your email for the instructions to reset your password"
+msgstr "تحقق من بريدك الإلكتروني للحصول على تعليمات إعادة تعيين كلمة المرور الخاصة بك"
+
+#: app/routes.py:111 app/templates/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: app/routes.py:125
+msgid "Your password has been reset."
+msgstr "تم إعادة تعيين كلمة المرور الخاصة بك."
+
+#: app/routes.py:154
+msgid "Your changes have been saved."
+msgstr "تم حفظ التغييرات التي قمت بها."
+
+#: app/routes.py:159 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "تحرير الملف الشخصي"
+
+#: app/routes.py:170 app/routes.py:190
+#, python-format
+msgid "User %(username)s not found."
+msgstr "لم يتم العثور على المستخدم %(username)."
+
+#: app/routes.py:173
+msgid "You cannot follow yourself!"
+msgstr "لا يمكنك متابعة نفسك!"
+
+#: app/routes.py:177
+#, python-format
+msgid "You are following %(username)s!"
+msgstr "أنت تتابع %(username)s!"
+
+#: app/routes.py:193
+msgid "You cannot unfollow yourself!"
+msgstr "لا يمكنك إلغاء متابعة نفسك!"
+
+#: app/routes.py:197
+#, python-format
+msgid "You are not following %(username)s."
+msgstr "أنت لا تتابع %(username)s."
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "حدث خطأ غير متوقع"
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "تم إخطار المسؤول. "
+
+#: app/templates/500.html:6
+msgid "Back"
+msgstr "العودة"
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s قال %(when)s"
+
+#: app/templates/base.html:14
+msgid "Welcome to Microblog"
+msgstr "مرحبا بكم في Microblog"
+
+#: app/templates/base.html:36
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: app/templates/base.html:38
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: app/templates/base.html:39
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "مرحبًا %(username)s!"
+
+#: app/templates/index.html:17 app/templates/user.html:41
+msgid "Newer posts"
+msgstr "أحدث المشاركات"
+
+#: app/templates/index.html:22 app/templates/user.html:46
+msgid "Older posts"
+msgstr "المشاركات الأقدم"
+
+#: app/templates/login.html:12
+msgid "New User?"
+msgstr "مستخدم جديد؟"
+
+#: app/templates/login.html:12
+msgid "Click to Register!"
+msgstr "اضغط للتسجيل!"
+
+#: app/templates/login.html:14
+msgid "Forgot Your Password?"
+msgstr "هل نسيت كلمة المرور؟"
+
+#: app/templates/login.html:15
+msgid "Click to Reset It"
+msgstr "انقر لإعادة تعيينه"
+
+#: app/templates/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "إعادة تعيين كلمة المرور الخاصة بك"
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr "المستخدم"
+
+#: app/templates/user.html:11
+msgid "Last seen on"
+msgstr "آخر ظهور بتاريخ"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d متابِعين"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d following"
+msgstr "%(count)d متابَعًا"
+
+#: app/templates/user.html:15
+msgid "Edit your profile"
+msgstr "تحرير ملف الشخصي الخاص بك"
+
+#: app/templates/user.html:20
+msgid "Follow"
+msgstr "متابعة"
+
+#: app/templates/user.html:27
+msgid "Unfollow"
+msgstr "إلغاء المتابعة"
+
