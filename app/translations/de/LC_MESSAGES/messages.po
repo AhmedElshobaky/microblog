@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-20 19:02+0200\n"
+"POT-Creation-Date: 2023-11-20 20:45+0200\n"
 "PO-Revision-Date: 2023-11-20 17:59+0200\n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -38,7 +38,7 @@ msgstr "Passwort zurücksetzen"
 msgid "Remember Me"
 msgstr "Erinnere dich an mich"
 
-#: app/forms.py:14 app/routes.py:74 app/templates/login.html:5
+#: app/forms.py:14 app/routes.py:80 app/templates/login.html:5
 msgid "Sign In"
 msgstr "Anmelden"
 
@@ -50,7 +50,7 @@ msgstr "E-Mail"
 msgid "Repeat Password"
 msgstr "Passwort zurücksetzen"
 
-#: app/forms.py:21 app/routes.py:95 app/templates/register.html:5
+#: app/forms.py:21 app/routes.py:101 app/templates/register.html:5
 msgid "Register"
 msgstr "Registrieren"
 
@@ -78,68 +78,76 @@ msgstr "Sag etwas"
 msgid "Request Password Reset"
 msgstr "Passwort zurücksetzen"
 
-#: app/routes.py:30
+#: app/routes.py:36
 msgid "Your post is now live!"
 msgstr "Dein Beitrag ist jetzt online!"
 
-#: app/routes.py:39 app/templates/base.html:31
+#: app/routes.py:45 app/templates/base.html:31
 msgid "Home"
 msgstr "Zuhause"
 
-#: app/routes.py:54 app/templates/base.html:32
+#: app/routes.py:60 app/templates/base.html:32
 msgid "Explore"
 msgstr "Erkunden"
 
-#: app/routes.py:67
+#: app/routes.py:73
 msgid "Invalid username or password"
 msgstr "Ungültiger Benutzername oder ungültiges Passwort"
 
-#: app/routes.py:93
+#: app/routes.py:99
 msgid "Congratulations, you are now a registered user!"
 msgstr "Herzlichen Glückwunsch, Sie sind jetzt ein registrierter Benutzer!"
 
-#: app/routes.py:108
+#: app/routes.py:114
 msgid "Check your email for the instructions to reset your password"
 msgstr "Überprüfen Sie Ihre E-Mails auf Anweisungen zum Zurücksetzen Ihres Passworts"
 
-#: app/routes.py:111 app/templates/reset_password_request.html:5
+#: app/routes.py:117 app/templates/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "Passwort zurücksetzen"
 
-#: app/routes.py:125
+#: app/routes.py:131
 msgid "Your password has been reset."
 msgstr "Ihr Passwort wurde zurückgesetzt."
 
-#: app/routes.py:154
+#: app/routes.py:160
 msgid "Your changes have been saved."
 msgstr "Ihre Änderungen wurden gespeichert."
 
-#: app/routes.py:159 app/templates/edit_profile.html:5
+#: app/routes.py:165 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "Profil bearbeiten"
 
-#: app/routes.py:170 app/routes.py:190
+#: app/routes.py:176 app/routes.py:196
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Benutzer %(username)s nicht gefunden."
 
-#: app/routes.py:173
+#: app/routes.py:179
 msgid "You cannot follow yourself!"
 msgstr "Du kannst dir selbst nicht folgen!"
 
-#: app/routes.py:177
+#: app/routes.py:183
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Sie folgen %(username)s!"
 
-#: app/routes.py:193
+#: app/routes.py:199
 msgid "You cannot unfollow yourself!"
 msgstr "Du kannst dir selbst nicht entfolgen!"
 
-#: app/routes.py:197
+#: app/routes.py:203
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "Sie folgen %(username)s nicht."
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr "Fehler: Der Übersetzungsdienst ist nicht konfiguriert."
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr "Fehler: Der Übersetzungsdienst ist fehlgeschlagen."
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
@@ -158,6 +166,10 @@ msgstr "Zurück"
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s sagte %(when)s"
 
+#: app/templates/_post.html:25
+msgid "Translate"
+msgstr "Übersetzen"
+
 #: app/templates/base.html:14
 msgid "Welcome to Microblog"
 msgstr "Willkommen im Microblog"
@@ -173,6 +185,10 @@ msgstr "Profil"
 #: app/templates/base.html:39
 msgid "Logout"
 msgstr "Abmelden"
+
+#: app/templates/base.html:76
+msgid "Error: Could not contact server."
+msgstr "Fehler: Server konnte nicht kontaktiert werden."
 
 #: app/templates/index.html:5
 #, python-format
