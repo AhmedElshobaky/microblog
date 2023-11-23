@@ -2,3 +2,4 @@
 __pycache__
 /logs
 .env
+http_ca.crt

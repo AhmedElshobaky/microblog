@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from ssl import create_default_context
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
@@ -21,3 +22,8 @@ class Config(object):
     POSTS_PER_PAGE = 5 #post
 
     LANGUAGES = ['en', 'ar', 'es', 'fr', 'de']
+
+    CONTEXT= create_default_context(cafile=os.environ.get('CAFILE'))
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    ELASTIC_NAME = os.environ.get('ELASTIC_NAME')
+    ELASTIC_PASSWORD = os.environ.get('ELASTIC_PASSWORD')
