@@ -1,10 +1,36 @@
 # Microblog
 Microblog is a web application that allows users to create profiles, write posts, send messages, follow each other, and many other social interactions. The platform supports English, Arabic, French, Spanish, and German. The website is implemented in [flask](https://flask.palletsprojects.com/en/3.0.x/) (a python framework) and following [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world).
 
+## Installation instructions:
+- Clone the remote repositery
+- Go to the directory of the local repositery to create and activate a python environment 
+  ```
+  python -m venv venv
+  source venv/bin/activate #in Ubuntu, WSL, or even Bash Terminal
+  ```
+-  After activating the environment install the required dependencies
+  ```
+  pip install -r requirments.txt
+  ```
+- Create _'.env'_ file in the directory and add these variables in it:
+  ```
+  SECRET_KEY=an-example-of-a-strong-password   # create a strong password and drop it here to be used later in resseting the user password
+  MAIL_SERVER=localhost
+  MAIL_PORT=25
+  MS_TRANSLATOR_KEY= ***********************  #Your microsoft azure translation key 
+  CAFILE=http_ca.crt                          #this certificate is optained from ElasticSearch and copied to the directory of microblog  
+  ELASTICSEARCH_URL=https://localhost:9200
+  ELASTIC_NAME=elastic
+  ELASTIC_PASSWORD=*******************    #your ElasticSearch password optained from running ElasticSearch server for the first time
+  ```
+  - *Notes*:
+  - Azure translation key could be optained for free, follow this [Microsoft tutorial](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
+  - ElasticSearch service should be installed and running to be able to index and search the website posts, follow this [installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html) and   I highly recommend downloading and running it in docker following [Elastic docker installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
+
 ## Entity Relationship Diagram (ERD):
 <p align="center">
   <img width="800"  src="https://github-production-user-asset-6210df.s3.amazonaws.com/65557776/285468941-0014317c-fb1e-46bc-85a1-c62455482b36.png">
-</p>
+</p> 
 
 ## Main functionalities and Features: 
 ### Home page:
@@ -65,30 +91,3 @@ Users can send private messages to each others
 <p align="center">
   <img width="800" src="https://github-production-user-asset-6210df.s3.amazonaws.com/65557776/285490465-4693bf62-7bec-47b5-883e-a2b50efc9082.png">
 </p>
-
-## Installation instructions:
-- Clone the remote repositery
-- Go to the directory of the local repositery to create and activate a python environment 
-  ```
-  python -m venv venv
-  source venv/bin/activate #in Ubuntu, WSL, or even Bash Terminal
-  ```
--  After activating the environment install the required dependencies
-  ```
-  pip install -r requirments.txt
-  ```
-- Create _'.env'_ file in the directory and add these variables in it:
-  ```
-  SECRET_KEY=an-example-of-a-strong-password   # create a strong password and drop it here to be used later in resseting the user password
-  MAIL_SERVER=localhost
-  MAIL_PORT=25
-  MS_TRANSLATOR_KEY= ***********************  #Your microsoft azure translation key 
-  CAFILE=http_ca.crt                          #this certificate is optained from ElasticSearch and copied to the directory of microblog  
-  ELASTICSEARCH_URL=https://localhost:9200
-  ELASTIC_NAME=elastic
-  ELASTIC_PASSWORD=*******************    #your ElasticSearch password optained from running ElasticSearch server for the first time
-  ```
-  - *Notes*:
-  - Azure translation key could be optained for free, follow this [Microsoft tutorial](https://learn.microsoft.com/en-us/azure/ai-services/translator/create-translator-resource)
-  - ElasticSearch service should be installed and running to be able to index and search the website posts, follow this [installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html) and   I highly recommend downloading and running it in docker following [Elastic docker installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
-     
